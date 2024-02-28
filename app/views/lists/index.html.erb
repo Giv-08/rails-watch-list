@@ -1,6 +1,8 @@
-<h1>index</h1>
+<h1>Movie lists</h1>
 <ul>
 <li><% @lists.each do |list|%></li>
 <li><%= list.name%></li>
 <% end %>
 </ul>
+
+<%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>

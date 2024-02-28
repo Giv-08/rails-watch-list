@@ -1,0 +1,13 @@
+<%= link_to 'Add a movie', new_movie_path(@movie), class: "btn btn-success"  %>
+
+<h1>Movie lists</h1>
+<ul>
+<% @movies.each do |movie| %>
+<li>Title:<%= movie.title %><br>
+Rating:<%= movie.rating %><br>
+Overview:<%= movie.overview %>
+</li>
+<% end %>
+</ul>
+
+<%# <%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-success" %> %>
