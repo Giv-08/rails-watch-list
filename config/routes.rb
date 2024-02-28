@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   # post '/lists', to: 'lists#create'
 
   resources :lists, only: [:index, :create, :show, :new] do
-  resources :bookmarks, only: [:new, :create, :destroy]
+    resources :bookmarks, only: [:new, :create]
   end
 end
