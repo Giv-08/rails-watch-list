@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+$gray: #EEEDEB;
+$beige: #E0CCBE;
+$green: #747264;
+$dark: #3C3633;
+$white: #ffffff;
+
+body {
+  background-color: $gray;
+}
+
+h1 {
+  color: $white;
+}
+
+h2 {
+  margin: 20px;
+}
