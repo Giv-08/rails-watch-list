@@ -1,0 +1,9 @@
+<h1>Bookmarks</h1>
+<ul>
+<li><% @bookmarks.each do |bookmark|%></li>
+<li ><%= bookmark.comment %></li>
+<% end %>
+<%= link_to "delete", list_bookmarks_path %>
+</ul>
+
+<%= link_to "Create a bookmark", new_list_bookmark_path, class: "btn btn-flat" %>

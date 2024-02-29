@@ -1,9 +1,5 @@
 <h1><%= @movie.title %></h1>
-<%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-success" %>
 
- <%# <h2><strong><%= @movie.title %> • <%# @movie.rating %></strong></h2>
- <p><%# @movie.overview %></p>
- <h1>Add this movie in the list</h1>
 <%# iterate restaurant and review in the form %>
 <%= simple_form_for [@list, @movie] do |f| %>
   <%= f.input :title %>

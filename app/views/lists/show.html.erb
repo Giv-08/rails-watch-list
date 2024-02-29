@@ -1,8 +1,13 @@
 <li><%= @list.name %></li>
-
-<ul>
-<% @list.movies.each do |movie| %>
-<li><%= movie.title %></li>
+<div class="container">
+<% @list.bookmarks.each do |bookmark| %>
+<div class="card-container">
+<li><%= bookmark.movie.title %></li>
+<li>Comment: <%= bookmark.comment %></li>
+<br>
+</div>
 <% end %>
 </ul>
+</div>
   <%= link_to "Back to movie lists", lists_path(@list) %>
+  <%= link_to "Add a bookmark to this list", new_list_bookmark_path(@list) %>
