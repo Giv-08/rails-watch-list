@@ -12,9 +12,8 @@ Rails.application.routes.draw do
   # get '/lists/:id', to: 'lists#show'
   # post '/lists', to: 'lists#create'
 
-  resources :lists, only: [:index, :create, :show, :new, :destroy] do
-    resources :bookmarks, only: [:index, :show, :new, :create]
+  resources :lists, only: [:index, :create, :show, :new] do
+    resources :bookmarks, only: [:new, :create]
   end
   resources :bookmarks, only: [:destroy]
-  resources :movies, only: [:index, :show, :new, :create, :destroy]
 end

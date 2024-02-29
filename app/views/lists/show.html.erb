@@ -1,11 +1,13 @@
 <li><%= @list.name %></li>
 <div class="container">
 <% @list.bookmarks.each do |bookmark| %>
-<div class="card-container">
-<li><%= bookmark.movie.title %></li>
-<li>Comment: <%= bookmark.comment %></li>
-<br>
-</div>
+  <div class="card-container">
+    <li>
+      <%= bookmark.movie.title %> <br>
+      Comment: <%= bookmark.comment %> <br>
+      <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: 'delete' } %>
+    </li>
+  </div>
 <% end %>
 </ul>
 </div>
