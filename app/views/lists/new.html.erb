@@ -1,16 +1,46 @@
+<%# nav-bar %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <div class="logo"><i class="fa-solid fa-photo-film"></i></div>
+    <% end %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "My list", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New List", new_list_path(:id), class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%# banner %>
+<div class="list-header" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://miro.medium.com/v2/resize:fit:1200/1*i0NbyT3x5k8nVMb8ShzgLw.png);">
+  <div class="container">
+    <h3><%= @list.name %></h3>
+  </div>
+</div>
+
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h3>Create a new list</h3>
         <%= simple_form_for @list do |f| %>
-          <%= f.input :name, placeholder: 'Drama' %>
-          <%= f.input :photo, as: :file %>
+          <%= f.input :name, placeholder: 'Add list here' %>
+          <%# <%= f.input :photo, as: :file %>
           <%= f.submit class: 'btn btn-success' %>
         <% end %>
-        <%= link_to "Create a bookmark", new_list_bookmark_path(:id) %>
+        <%# <h4 class="new-list-btn "><%= link_to "Create a bookmark", new_list_bookmark_path(:id)<h4> %>
     </div>
       </div>
     </div>
   </div>
-</div>
+
+<h4 class="new-list-btn" id="list-btn"><%= link_to "Back to lists", lists_path %></h4>

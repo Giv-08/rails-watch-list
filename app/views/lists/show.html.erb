@@ -1,15 +1,47 @@
-<li><%= @list.name %></li>
-<div class="container">
-<% @list.bookmarks.each do |bookmark| %>
-  <div class="card-container">
-    <li>
-      <%= bookmark.movie.title %> <br>
-      Comment: <%= bookmark.comment %> <br>
-      <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: 'delete' } %>
-    </li>
+<%# nav-bar %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <div class="logo"><i class="fa-solid fa-photo-film"></i></div>
+    <% end %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "My list", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New List", new_list_path(:id), class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+          </li>
+      </ul>
+    </div>
   </div>
-<% end %>
-</ul>
 </div>
-  <%= link_to "Back to movie lists", lists_path(@list) %>
-  <%= link_to "Add a bookmark to this list", new_list_bookmark_path(@list) %>
+
+<%# banner %>
+<div class="list-header" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://miro.medium.com/v2/resize:fit:1200/1*i0NbyT3x5k8nVMb8ShzgLw.png);">
+  <div class="container">
+    <h3><%= @list.name %></h3>
+  </div>
+</div>
+
+<%# movie cards %>
+<div class="row">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="col-6">
+      <div class="movie-card">
+        <img class="movie_poster" src="<%= bookmark.movie.poster_url %>"> <br>
+        <li>
+        <%= bookmark.movie.title %><br>
+        "<%= bookmark.comment %>" <br>
+      <h4><%= link_to "delete this bookmark", bookmark_path(bookmark), data: { turbo_method: 'delete' } %></h4>
+    </li>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<h4 class="new-list-btn"><%= link_to "Back to movie lists", lists_path(@list) %></h4>
+<h4 class="new-list-btn"><%= link_to "Add a bookmark to this list", new_list_bookmark_path(@list) %></h4>
