@@ -43,7 +43,7 @@ div {
 #list-link a {
   text-decoration: none;
   color:#fff6d7;
-  font-size: 22px;
+  font-size: 1.3rem;
   letter-spacing: 2px;
   font-weight: 800;
   position: relative;
@@ -83,66 +83,79 @@ a {
 
 .list {
   flex: 0 0 auto;
-    width: 50%;
-    display: flex;
-    justify-content: center;
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 // footer
 
 .footer{
   background:$yellow;
-  padding:10px 0px;
+  padding:0px;
   font-family: 'Play', sans-serif;
   text-align:center;
-  }
+  width: 100%;
+}
 
-  .footer .row{
+.footer .row{
   width:100%;
+  height: 25px;
   margin:1% 0%;
   color:rgb(255, 255, 255);
   font-size:0.8em;
-  }
+}
 
-  .footer .row a {
-    font-size: 15px;
-    text-decoration:none;
-    color:#ffe7c3;
-    transition:0.5s;
-  }
+.footer .row a {
+  font-size: 15px;
+  text-decoration:none;
+  color:#ffe7c3;
+  transition:0.5s;
+}
 
-  .footer .row a:hover{
+.footer .row a:hover{
   color:#fecf89;
-  }
+}
 
-  .footer .row ul{
+.footer .row ul{
   width:100%;
-  }
+}
 
-  .footer .row ul li{
+.footer .row ul li{
   display:inline-block;
-  margin:0px 30px;
+  margin:10px 30px;
   }
 
-  .footer .row a i{
+.footer .row a i{
   font-size:2em;
   margin:0% 1%;
   }
 
-  @media (max-width:720px){
+@media (max-width:720px){
   .footer{
-  text-align:left;
-  padding:5%;
+    text-align:left;
+    padding:5%;
   }
   .footer .row ul li{
-  display:block;
-  margin:10px 0px;
-  text-align:left;
+    display:block;
+    margin:10px 50px;
+    text-align:left;
   }
   .footer .row a i{
-  margin:0% 3%;
+    margin:0% 3%;
   }
   }
-  .footer-text {
-    font-size: 12px;
-    color:rgb(255, 241, 215);
+  div .footer-text small{
+    font-size: 13px;
+    color:#ffe7c3;
+    text-shadow: 1px 2px 2px #464646b8;
   }
+// responsive
+/* Screen larger than 600px? 2 column */
+@media (max-width: 600px) {
+  .list-card { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (max-width: 900px) {
+  .list-card { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+}
