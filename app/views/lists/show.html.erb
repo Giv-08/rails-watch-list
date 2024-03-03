@@ -8,12 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <%= link_to "My list", "#", class: "nav-link" %>
+            <%= link_to "My list", lists_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "New List", new_list_path(:id), class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
+          <div class="avatar"></div>
           </li>
       </ul>
     </div>
@@ -21,11 +22,22 @@
 </div>
 
 <%# banner %>
-<div class="list-header" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://miro.medium.com/v2/resize:fit:1200/1*i0NbyT3x5k8nVMb8ShzgLw.png);">
+<%# <header>
+	<div class="overlay">
+<h1>Simply The Best</h1>
+<h3>Reasons for Choosing US</h3>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+	<br>
+		</div>
+</header> %>
+<header>
+<div class="overlay" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key%>')"
+>
   <div class="container">
     <h3><%= @list.name %></h3>
   </div>
 </div>
+</header>
 
 <%# movie cards %>
 <div class="row">
@@ -36,12 +48,28 @@
         <li>
         <%= bookmark.movie.title %><br>
         "<%= bookmark.comment %>" <br>
-      <h4><%= link_to "delete this bookmark", bookmark_path(bookmark), data: { turbo_method: 'delete' } %></h4>
+        <%= bookmark.movie.rating.to_i.times do%>
+        <i class="fa-regular fa-star fa-xs" style="color: #ffba24;"></i>
+        <% end %>
+       <%= link_to list_path(@list), class: 'nav-btn', data: { turbo_method: :delete } do %>
+            <i class="fa-solid fa-trash-can"></i>
+            <% end %>
     </li>
       </div>
     </div>
   <% end %>
 </div>
 
-<h4 class="new-list-btn"><%= link_to "Back to movie lists", lists_path(@list) %></h4>
-<h4 class="new-list-btn"><%= link_to "Add a bookmark to this list", new_list_bookmark_path(@list) %></h4>
+<section class="buttons">
+<div class="button-container">
+  <div class="btn-hover">
+  <span><%= link_to "Back to movie lists", lists_path(@list) %></span>
+    </div>
+</div>
+
+<div class="button-container">
+  <div class="btn-hover">
+<span><%= link_to "Add a bookmark to this list", new_list_bookmark_path(@list) %></span>
+  </div>
+</div>
+</section>

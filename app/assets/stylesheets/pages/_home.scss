@@ -1,29 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Dongle&family=Koulen&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 // Specific CSS for your home-page
-$gray: #EEEDEB;
-$beige: #ffe7bd57;
-$dark: #3C3633;
+$gray: #C4C2C1;
+$navy: #1A292F;
+$dark: #272727;
 $white: #ffffff;
-$yellow: #fbc64c;
+$yellow: #f6f342;
+$purple: #9C28B1;
 
 body {
+  font-family: "Dongle", sans-serif;
+  letter-spacing: 1px;
   background-color: $dark;
   margin:0;
-overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 h1 {
+  font-size: 40px;
   color: $yellow;
   text-align: center;
   margin: 40px;
+  text-shadow: 4px 5px 3px #342d00;
 }
-
 h2 {
-  margin: 40px;
-  color: $yellow;
+  color: $purple;
   font-weight: 800;
+  width: 100%;
+  border-bottom: 1.5px solid #f4ff61;
+  line-height: 0.1em;
+  margin: 60px 0px 60px;
 }
 
+h2 span {
+  color: #b03aff;
+  background:#272727;
+  padding:0 10px;
+}
+
+h2.text-head {
+  text-shadow: 2px 3px 3px #000000;
+}
 h3 {
+  margin-top: 80px;
   text-align: center;
   color: $yellow;
   font-weight: 800;
@@ -36,50 +55,37 @@ h4 {
   justify-content: center;
 }
 
+p {
+  font-size: 40px;
+}
 div {
   margin: 0px 0px;
 }
 
 #list-link a {
   text-decoration: none;
-  color:#fff6d7;
-  font-size: 1.3rem;
+  color:$yellow;
+  font-size: 3vw;
   letter-spacing: 2px;
   font-weight: 800;
   position: relative;
-  top: 90px;
+  top: 15px;
   display: flex;
   justify-content: center;
-}
-
-.row {
-    padding: 0px 60px;
-}
-
-div .col {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
-}
-
-.col-6 {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0px;
+  text-shadow: 1px 2px 2px rgb(60, 60, 60);
 }
 
 li {
   list-style: none;
   text-align: center;
   text-decoration: none;
-  color:#ffecc1;
-  text-shadow: 1px 2px 2px #464646b8;
+  color:$yellow;
 }
 
-a {
-  text-decoration: none;
-  color: rgb(250, 163, 0);
-}
+// a {
+//   text-decoration: none;
+//   color: $yellow;
+// }
 
 .list {
   flex: 0 0 auto;
@@ -89,87 +95,89 @@ a {
 }
 // footer
 
-.footer{
-  background:$yellow;
-  padding:0px;
-  font-family: 'Play', sans-serif;
-  text-align:center;
+.footer {
   width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
 }
 
-.footer .row{
-  width:100%;
-  height: 25px;
-  margin:1% 0%;
-  color:rgb(255, 255, 255);
-  font-size:0.8em;
+footer ul {
+  display: flex;
+  gap: 40px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0px;
+  padding-left: 0px;
 }
 
-.footer .row a {
-  font-size: 15px;
-  text-decoration:none;
-  color:#ffe7c3;
-  transition:0.5s;
+footer ul a {
+  text-decoration: none;
+  color: #9600fa;
+  // text-shadow: 1px 2px 2px rgb(255, 255, 255);
+
+  &:hover {
+    text-shadow: 1px 2px 2px rgb(255, 255, 255);
+    transition: 300ms ease-in-out;
+    color: #9600fa;
+  }
 }
 
-.footer .row a:hover{
-  color:#fecf89;
+.footer-text {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #9600fa;
 }
 
-.footer .row ul{
-  width:100%;
-}
-
-.footer .row ul li{
-  display:inline-block;
-  margin:10px 30px;
-  }
-
-.footer .row a i{
-  font-size:2em;
-  margin:0% 1%;
-  }
-
-@media (max-width:720px){
-  .footer{
-    text-align:left;
-    padding:5%;
-  }
-  .footer .row ul li{
-    display:block;
-    margin:10px 50px;
-    text-align:left;
-  }
-  .footer .row a i{
-    margin:0% 3%;
-  }
-  }
-  div .footer-text small{
-    font-size: 13px;
-    color:#ffe7c3;
-    text-shadow: 1px 2px 2px #464646b8;
-  }
-// responsive
-/* Screen larger than 600px? 2 column */
-// @media (max-width: 600px) {
-//   .list-card { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-// }
-
-// /* Screen larger than 900px? 3 columns */
-// @media (max-width: 900px) {
-//   .list-card { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-// }
-/* Responsive layout - makes a two column-layout instead of four columns */
+//  responsive
 @media screen and (max-width: 800px) {
   .col {
+    display: flex;
+    align-items: center;
     flex: 50%;
     max-width: 50%;
+  }
+  .list-img {
+    width: 40vw;
+  }
+  #list-link a {
+    font-size: 2.2rem;
   }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col {
+    display: flex;
+    align-items: center;
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  footer ul {
+    font-size: inherit;
+  }
+  .list-cards {
+    display: contents;
+  }
+  .list-img {
+    width: 80vw;
+  }
+  #list-link a {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .col {
+    display: flex;
+    align-items: center;
     flex: 100%;
     max-width: 100%;
   }

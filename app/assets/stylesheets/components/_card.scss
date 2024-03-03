@@ -1,7 +1,71 @@
-.list-card {
+.list-cards {
   max-width: 300px;
 }
 
+.row {
+  padding: 0px 60px;
+  padding-bottom: 60px;
+}
+
+div .col {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+  flex-direction: column;
+}
+
+div.text-head-container {
+  margin: 50px;
+}
+
+.col-6 {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+}
+
+// zoom-in cards
+.list-cards:hover .list-img, .list-cards:focus .list-img {
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.list-cards:hover a, .list-cards:focus a {
+  display: block;
+}
+
+.list-img:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(52,73,94,0.75);
+}
+
+.list-img {
+  width: 20vw;
+  height: 15vh;
+  border-radius: 10px;
+  border: 2px solid #7a7a7a;
+  background-position: center;
+  background-size: cover;
+
+  &:hover {
+    box-shadow: 2px 3px 10px #000000;
+    -webkit-transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    -o-transition: 300ms ease-in-out;
+    transition: 300ms ease-in-out;
+  }
+}
+
+//  show.html page
 .movie-card {
   display: flex;
   max-width: 300px;

@@ -1,5 +1,18 @@
+.form {
+  width: 35rem;
+  background: transparent;
+  border: 2px solid #F6F342;
+
+  h3 {
+    color: #a424cf;
+    text-shadow: none;
+    margin-top: 20px;
+  }
+}
+
 .form-label {
-  color: white;
+  color: #a424cf;
+  font-size: 1.4rem;
 }
 .form-wrap {
   display: flex;
@@ -15,3 +28,53 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+input#list_name.form-control.string.required {
+  background: transparent;
+  border: 1px solid #F6F342;
+  color: #F6F342;
+  font-size: 1.3rem;
+}
+
+input#list_photo.form-control.file.required {
+  background: transparent;
+  border: 1px solid #F6F342;
+  color: #F6F342;
+  font-size: 1.3rem;
+  }
+
+input[type="file"]::file-selector-button {
+  color: #F6F342;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  background-color: transparent;
+  transition: background-color 300ms;
+}
+
+input.submit-btn {
+  background: transparent;
+  color: #F6F342;
+  font-size: 1.6rem;
+  border: 2px solid #a424cf;
+  width: 200px;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* file upload button hover state */
+// input[type="file"]::file-selector-button:hover {
+//   color: #9600fa;
+//   background-color: #f800f4;
+// }
+
+// /* file upload button active state */
+// input[type="file"]::file-selector-button:active {
+//   background-color: #d400ff;
+//   color: #9600fa;
+// }
+
+// input[type="file"]::file-selector-button:hover {
+//   font-size: 2rem;
+//   background: transparent;
+// }
