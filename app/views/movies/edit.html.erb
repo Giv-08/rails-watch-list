@@ -1,1 +1,13 @@
 <h1>Edit a movie</h1>
+
+<%# iterate restaurant and review in the form %>
+ <% simple_form_for [@list, @movie] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :rating %>
+  <%= f.input :overview %>
+  <%= f.input :poster_url %>
+  <%= f.submit "Submit movie to a list", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Back to lists", lists_path %>
+<br>
+<%= link_to "Back to movies", movies_path(@movie) %>

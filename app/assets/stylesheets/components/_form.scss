@@ -21,8 +21,13 @@
 }
 
 .form-container {
-  width: 700px;
+  width: 60vw;
 }
+
+.textarea.form-control {
+  font-size: 1.5rem;
+}
+
 
 form {
   display: flex;

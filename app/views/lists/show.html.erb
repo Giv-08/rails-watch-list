@@ -1,7 +1,7 @@
 <%# nav-bar %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to lists_path, class: "navbar-brand" do %>
       <div class="logo"><i class="fa-solid fa-photo-film"></i></div>
     <% end %>
 
@@ -48,7 +48,7 @@
         <li>
         <%= bookmark.movie.title %><br>
         "<%= bookmark.comment %>" <br>
-        <%= bookmark.movie.rating.to_i.times do%>
+        <% bookmark.movie.rating.to_i.times do%>
         <i class="fa-regular fa-star fa-xs" style="color: #ffba24;"></i>
         <% end %>
        <%= link_to list_path(@list), class: 'nav-btn', data: { turbo_method: :delete } do %>
@@ -63,7 +63,7 @@
 <section class="buttons">
 <div class="button-container">
   <div class="btn-hover">
-  <span><%= link_to "Back to movie lists", lists_path(@list) %></span>
+  <span><%= link_to "Back to movie lists", lists_path(@list), class: "btn-back-list" %></span>
     </div>
 </div>
 
